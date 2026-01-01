@@ -1,0 +1,14 @@
+{
+  "$schema": "https://appwrite.io/schemas/functions/config.json",
+  "name": "push-notifications",
+  "runtime": "node-18.0",
+  "entrypoint": "src/main.js",
+  "commands": "npm install",
+  "permissions": [],
+  "events": [
+    "databases.*.collections.users.documents.*.update",
+    "databases.*.collections.ads.documents.*.create"
+  ],
+  "schedule": "",
+  "timeout": 30
+}

@@ -1,14 +1,21 @@
 {
-  "$schema": "https://appwrite.io/schemas/functions/config.json",
-  "name": "push-notifications",
-  "runtime": "node-18.0",
-  "entrypoint": "src/main.js",
-  "commands": "npm install",
-  "permissions": [],
+  "$id": "push-notifications",
+  "name": "Push Notifications",
+  "runtime": "dart-3.5",
+  "execute": [],
   "events": [
     "databases.*.collections.users.documents.*.update",
     "databases.*.collections.ads.documents.*.create"
   ],
   "schedule": "",
-  "timeout": 30
+  "timeout": 15,
+  "enabled": true,
+  "logging": true,
+  "entrypoint": "lib/main.dart",
+  "commands": "dart pub get",
+  "scopes": [
+    "databases.read",
+    "databases.write"
+  ],
+  "path": "push_notifications_dart"
 }

@@ -7,3 +7,4 @@ environment:
 
 dependencies:
   dart_appwrite: ^13.0.0
+  pointycastle: ^3.9.1

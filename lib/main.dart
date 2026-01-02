@@ -3,6 +3,7 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:dart_appwrite/dart_appwrite.dart';
 import 'package:pointycastle/export.dart';
+import 'package:asn1lib/asn1lib.dart';
 
 final String? endpoint = Platform.environment['APPWRITE_ENDPOINT'];
 final String? projectId = Platform.environment['APPWRITE_FUNCTION_PROJECT_ID'];

@@ -8,7 +8,7 @@ final String? endpoint = Platform.environment['APPWRITE_ENDPOINT'];
 final String? projectId = Platform.environment['APPWRITE_FUNCTION_PROJECT_ID'];
 final String? apiKey = Platform.environment['APPWRITE_API_KEY'];
 final String? databaseId = Platform.environment['DATABASE_ID'];
-final String? usersCollection = Platform.environment['USERS_COLLECTION'];
+final String? usersCollection = Platform.environment['USERS_COLLECTION_ID'];
 final String? firebaseServiceAccount =
     Platform.environment['FIREBASE_SERVICE_ACCOUNT'];
 
@@ -307,8 +307,8 @@ Future<dynamic> main(final context) async {
       context.log('👤 USER UPDATE DETECTED');
       context.log('   - User ID: $userId');
       context.log('   - KYC Status: $kycStatus');
-      context
-          .log('   - FCM Token: ${fcmToken.isNotEmpty ? "present" : "MISSING"}');
+      context.log(
+          '   - FCM Token: ${fcmToken.isNotEmpty ? "present" : "MISSING"}');
       context.log('════════════════════════════════════════');
 
       if (fcmToken.isEmpty) {
@@ -459,7 +459,8 @@ Future<dynamic> main(final context) async {
 
     context.log('ℹ️ Event not matched - no action taken');
     context.log('   Received event: $event');
-    context.log('   Expected: event containing "users" + "update" OR "ads" + "create"');
+    context.log(
+        '   Expected: event containing "users" + "update" OR "ads" + "create"');
 
     return _jsonResponse(context, {
       'success': true,

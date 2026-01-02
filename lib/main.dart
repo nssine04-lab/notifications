@@ -62,10 +62,10 @@ RSAPrivateKey _parsePrivateKeyFromPem(String pem) {
 }
 
 RSAPrivateKey _parseRsaPrivateKeySequence(ASN1Sequence seq) {
-  final modulus = (seq.elements![1] as ASN1Integer).integer!;
-  final privateExponent = (seq.elements![3] as ASN1Integer).integer!;
-  final p = (seq.elements![4] as ASN1Integer).integer!;
-  final q = (seq.elements![5] as ASN1Integer).integer!;
+  final modulus = (seq.elements![1] as ASN1Integer).valueAsBigInteger!;
+  final privateExponent = (seq.elements![3] as ASN1Integer).valueAsBigInteger!;
+  final p = (seq.elements![4] as ASN1Integer).valueAsBigInteger!;
+  final q = (seq.elements![5] as ASN1Integer).valueAsBigInteger!;
 
   return RSAPrivateKey(modulus, privateExponent, p, q);
 }
